@@ -1,0 +1,130 @@
+---
+title: "Modul 5"
+author: "Arya Gilang"
+date: "2022-09-25"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+library(dslabs)
+data("murders")
+murders$state
+```
+```{r}
+data <- nchar(murders$state)
+for (n in 1:length(data)){
+  if(data[n] > 8 ){
+    new_names = murders$abb[data[n]];
+    print(new_names)
+  }
+}
+
+
+```
+```{r}
+sum_n <- function(x){
+  s <- sum(x)
+  n <- length(x)
+  s+n
+}
+```
+
+```{r}
+s <- 0
+sum_n(1:5000)
+```
+```{r}
+compute_s_n <- function(x){
+  s <- sum(x)
+  n <- length(x)
+  s+n
+}
+```
+```{r}
+compute_s_n(1^2+2^2+3^2+4^2+5^2+6^2+7^2+8^2+9^2+10^2)
+compute_s_n(1^2+10^2)
+```
+```{r}
+
+compute <- function(n){
+  x <- 1:n
+  sum(n)
+}
+
+```
+```{r}
+for(i in 1:25){
+  print(i)
+}
+```
+```{r}
+m <- 25
+s_n <- vector("numeric",25)
+for(n in 1:m){
+  s_n[n] <- compute(n)
+}
+s_n
+```
+```{r}
+n <- 1:m
+plot(n,s_n)
+```
+
+```{r}
+x <- 1:25
+sapply(x, sqrt)
+n <- 1:25
+x_n <- sapply(n, compute_s_n)
+x_n
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
